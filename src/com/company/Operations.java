@@ -15,16 +15,18 @@ public class Operations {
                 .collect(Collectors.toList());
     }
 
-    public String topPlace(List<Offer> offerList)
+    public void  topPlace(List<Offer> offerList)
     {
-        Map.Entry<Place, Long> map = offerList.stream()
-                .collect(Collectors.groupingBy(Offer::getPlace,Collectors.counting()))
+        /*List<Offer> offers = offerList.stream()
+                .collect(Collectors.groupingBy(Offer::getPlace))
                 .entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .orElseThrow(NullPointerException::new);
+                .map(e->e.getValue().stream()
+                        .reduce((o1,o2)->new Offer(o1.getId(),o1.getShopName(),o1.getPrice()+o2.getPrice(),o1.getTax(),o1.getAddress(),o1.getPlace()))
+                        .map(Collectors.);*/
+       /* Map<Place, Long> result = offerList.stream()
+                .collect(Collectors.groupingBy(Offer::getPlace),Collectors.summingLong(Offer::getPrice));
 
-        return map.getKey() + ":" + map.getValue();
-
+       return result;*/
     }
 
 
