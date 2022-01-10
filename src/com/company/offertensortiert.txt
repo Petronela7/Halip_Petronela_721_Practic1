@@ -1,0 +1,4 @@
+3#Signvision GmBh#1300000.0#19.0#Herdernstrasse 2#1300000.0
+4#lasermed GmBh#571590.0#7.7#Eglistrasse 19#571590.0
+2#Mediconsult AG#435000.0#7.7#Regenwiesenstrasse 1#435000.0
+1#Art Of Fire GmBh#330600.0#7.7#Eichenstrasse 15#330600.0
