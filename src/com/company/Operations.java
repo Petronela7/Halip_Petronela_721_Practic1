@@ -1,7 +1,7 @@
 package com.company;
 
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Operations {
@@ -14,5 +14,18 @@ public class Operations {
                 .sorted((o1, o2) -> o2.getPrice().compareTo(o1.getPrice()))
                 .collect(Collectors.toList());
     }
-    
+
+    public String topPlace(List<Offer> offerList)
+    {
+        Map.Entry<Place, Long> map = offerList.stream()
+                .collect(Collectors.groupingBy(Offer::getPlace,Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow(NullPointerException::new);
+
+        return map.getKey() + ":" + map.getValue();
+
+    }
+
+
 }

@@ -33,6 +33,10 @@ public class Repository {
         }
         bufferedWriter.close();
 
-
+    }
+    public void writeWord(String filename, String word) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
+        bufferedWriter.write(word);
+        bufferedWriter.close();
     }
 }
